@@ -14,7 +14,7 @@ const game = new Phaser.Game(config);
 
 function preload() {
     // Load assets here
-    this.load.image('logo', 'assets/logo.png');
+    this.load.image('logo', 'assets/Logo.png');
     //this.load.image('background', 'assets/background.png');
     this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
 
