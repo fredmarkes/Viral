@@ -1,7 +1,8 @@
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: '500',
+    height: '400',
+    parent: 'game-container',
     backgroundColor: '#FFF',
     scene: {
         preload: preload,
@@ -21,22 +22,31 @@ function preload() {
 }
 
 function create() {
+
+    window.addEventListener('resize', () => {
+        // Update game size
+  //      game.scale.resize(window.innerWidth, window.innerHeight);
+    });
+
+
     // Create game objects here
     //this.add.image(400, 300, 'background');
     const logo = this.add.image(85, 34, 'logo');
     logo.setScale(0.5); // Adjust scale as needed
 
     // Create buttons
-    const buttonWidth = 250; // Adjust button width as needed
-    const buttonHeight = 50; // Adjust button height as needed
-    const margin = 4; // Margin between buttons
-
-    const totalButtonHeight = buttonHeight * 4 + margin * 3;
-    const startY = (config.height - totalButtonHeight) / 2;
-
-    for (let i = 0; i < 4; i++) {
-
-        const button = this.add.text(400, 300, 'Play Oscars 23', {
+     // Create buttons
+     const buttonHeight = 50; // Adjust button height as needed
+     const margin = 4; // Margin between buttons
+     const totalButtonHeight = buttonHeight * 4 + margin * 3;
+     const startY = (config.height) / 2;
+ 
+     // Dynamically position buttons
+     const centerX = config.width / 2;
+     for (let i = 0; i < 1; i++) {
+         const buttonY = startY + (buttonHeight + margin) * i;
+ 
+         const button = this.add.text(centerX, buttonY, 'Play Oscars 23', {
             fontFamily: 'Rog Fonts',
             fontSize: '20px',
             color: '#ffffff',
